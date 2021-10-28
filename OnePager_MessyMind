@@ -1,0 +1,39 @@
+                              Messy Mind
+
+    Pitch:
+Puzzle Plateformer dans un esprit chaotique en constant changement.
+
+    Intention/Design Pillar:
+Contrôles simples, Puzzles, Réflexion
+
+    Genre :
+Solo, Plateforme, Puzzle
+
+    Concept :
+Dans Messy Mind, le monde se déconstruit et se reconstruit à chaque pas du
+joueur. Ouvrant et fermant des passages, offrant et enlevant des opportunités.
+Il n’y a que trois setup possibles afin que le joueur puisse analyser le terrain et
+prévoir son parcours.
+Le joueur ne dispose que de son unique capacité à calmer l’esprit afin
+d’empêcher tout changement pour quelques pas.
+
+    Gameplay :
+Dans ce monde qui change à chaque pas du joueur, celui-ci peut presser une
+touche afin d’empêcher tout changement pendant plusieurs pas.
+Cette capacité se recharge après X nombres de pas ou après avoir récupéré
+une orbe d’énergie.
+
+    Eléments :
+● Interrupteurs/Portes
+
+● Blocs fragiles
+
+● Orbes d’énergie (recharge la capacité du personnage)
+
+    Plugin :
+J’ai décidé d’ajouter comme plugin un script de point de sauvegarde. En effet,
+je présente un concept où le joueur échouera s’il ne pense pas un ou deux
+pas en avance et devoir tout recommencer encore et encore pourrait s’avérer
+frustrant d’où la nécessité d’un point de sauvegarde. Le point de sauvegarde
+étant essentiel dans la plupart des jeux, je pense que plusieurs projets
+pourraient en avoir besoin.
