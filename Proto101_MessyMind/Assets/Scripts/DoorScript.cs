@@ -10,6 +10,6 @@ public class DoorScript : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        door.transform.position += new Vector3(4, 0, 0);
+        door.transform.position += new Vector3(0, -10, 0);
     }
 }
