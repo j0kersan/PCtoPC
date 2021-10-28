@@ -10,7 +10,9 @@ public class MovingPlatforms : MonoBehaviour
     public Transform currentPos;
 
     //Empêcher les plateformes de bouger si le bouton est pressé mais que le personnage ne bouge pas
-    public CharacterControls charaCond;
+    public CharacterControls charaControls;
+
+    //public BoxCollider2D box;
 
     //Quand les plateformes bougent
     public bool onTheMove;
@@ -35,39 +37,55 @@ public class MovingPlatforms : MonoBehaviour
         onTheMove = false;
 
         #region MoveCond
-        //Si le joueur bouge, la plateforme bouge à sa seconde position
-        if (transform.position == pos1.position && charaCond.keyRight == true || transform.position == pos1.position && charaCond.keyLeft == true)
+        if (charaControls.powerAct == false)
         {
-            nextPos = pos2.position;
-        }
+            //Si le joueur bouge, la plateforme bouge à sa seconde position
+            if (transform.position == pos1.position && charaControls.keyRight == true || transform.position == pos1.position && charaControls.keyLeft == true)
+            {
+                nextPos = pos2.position;
+            }
 
-        //Si le joueur bouge, la plateforme bouge à sa troisième position
-        if (transform.position == pos2.position && charaCond.keyRight == true || transform.position == pos2.position && charaCond.keyLeft == true)
-        {
-            nextPos = pos3.position;
-        }
+            //Si le joueur bouge, la plateforme bouge à sa troisième position
+            if (transform.position == pos2.position && charaControls.keyRight == true || transform.position == pos2.position && charaControls.keyLeft == true)
+            {
+                nextPos = pos3.position;
+            }
 
-        //Si le joueur bouge, la plateforme bouge à sa première position
-        if (transform.position == pos3.position && charaCond.keyRight == true || transform.position == pos3.position && charaCond.keyLeft == true)
-        {
-            nextPos = pos1.position;
+            //Si le joueur bouge, la plateforme bouge à sa première position
+            if (transform.position == pos3.position && charaControls.keyRight == true || transform.position == pos3.position && charaControls.keyLeft == true)
+            {
+                nextPos = pos1.position;
+            }
         }
         #endregion
 
 
         transform.position = Vector3.MoveTowards(transform.position, nextPos, speed * Time.deltaTime);
 
+        /*#region PlatState
+
+        do
+        {
+
+            box.enabled = false;
+            Debug.Log("Collider disabled");
+        }
+        while (onTheMove == true);
+
+        #endregion*/
 
         #region PlayerMoveCond
 
-        if(currentPos.position != pos1.position || currentPos.position != pos2.position || currentPos.position != pos3.position)
+        if (currentPos.position != pos1.position || currentPos.position != pos2.position || currentPos.position != pos3.position)
         {
+
             onTheMove = true;
 
         }
 
         if (currentPos.position == pos1.position || currentPos.position == pos2.position || currentPos.position == pos3.position)
-                {
+        {
+
             onTheMove = false;
 
         }

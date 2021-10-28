@@ -191,6 +191,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -262,6 +263,8 @@ MonoBehaviour:
   moveCond: {fileID: 259258332}
   keyLeft: 0
   keyRight: 0
+  powerAct: 0
+  charaStep: 0
 --- !u!1 &148744144
 GameObject:
   m_ObjectHideFlags: 0
@@ -317,6 +320,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -382,6 +386,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2867394722f957c48a7b4668b787012e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &411214013 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 720472124365431620, guid: 05458f589a195cf4b846f97480021b73, type: 3}
+  m_PrefabInstance: {fileID: 1325268981}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -610,11 +619,19 @@ PrefabInstance:
       value: 3.19
       objectReference: {fileID: 0}
     - target: {fileID: 720472124365431619, guid: 05458f589a195cf4b846f97480021b73, type: 3}
+      propertyPath: box
+      value: 
+      objectReference: {fileID: 1154849512}
+    - target: {fileID: 720472124365431619, guid: 05458f589a195cf4b846f97480021b73, type: 3}
       propertyPath: startPos
       value: 
       objectReference: {fileID: 691069548}
     - target: {fileID: 720472124365431619, guid: 05458f589a195cf4b846f97480021b73, type: 3}
       propertyPath: charaCond
+      value: 
+      objectReference: {fileID: 133270054}
+    - target: {fileID: 720472124365431619, guid: 05458f589a195cf4b846f97480021b73, type: 3}
+      propertyPath: charaControls
       value: 
       objectReference: {fileID: 133270054}
     m_RemovedComponents: []
@@ -652,6 +669,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -706,6 +724,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1154849512 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 720472124365431620, guid: 05458f589a195cf4b846f97480021b73, type: 3}
+  m_PrefabInstance: {fileID: 640309913}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1264802051 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 720472123285099914, guid: 05458f589a195cf4b846f97480021b73, type: 3}
@@ -804,6 +827,10 @@ PrefabInstance:
       value: -5.79
       objectReference: {fileID: 0}
     - target: {fileID: 720472124365431619, guid: 05458f589a195cf4b846f97480021b73, type: 3}
+      propertyPath: box
+      value: 
+      objectReference: {fileID: 411214013}
+    - target: {fileID: 720472124365431619, guid: 05458f589a195cf4b846f97480021b73, type: 3}
       propertyPath: startPos
       value: 
       objectReference: {fileID: 1264802051}
@@ -811,8 +838,17 @@ PrefabInstance:
       propertyPath: charaCond
       value: 
       objectReference: {fileID: 133270054}
+    - target: {fileID: 720472124365431619, guid: 05458f589a195cf4b846f97480021b73, type: 3}
+      propertyPath: charaControls
+      value: 
+      objectReference: {fileID: 133270054}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05458f589a195cf4b846f97480021b73, type: 3}
+--- !u!61 &1355255621 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 720472124365431620, guid: 05458f589a195cf4b846f97480021b73, type: 3}
+  m_PrefabInstance: {fileID: 720472124513096863}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1357910241
 GameObject:
   m_ObjectHideFlags: 0
@@ -841,6 +877,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -924,6 +961,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1004,6 +1042,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1834493778 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 720472123285099915, guid: 05458f589a195cf4b846f97480021b73, type: 3}
+  m_PrefabInstance: {fileID: 720472124513096863}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1977390119
 GameObject:
   m_ObjectHideFlags: 0
@@ -1035,7 +1078,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7c4ec98c44fbb14bb9b6b35a5fe98d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 705761637}
+  door: {fileID: 1834493778}
+  speed: 0
 --- !u!212 &1977390121
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1047,6 +1091,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1205,11 +1250,19 @@ PrefabInstance:
       value: 3.19
       objectReference: {fileID: 0}
     - target: {fileID: 720472124365431619, guid: 05458f589a195cf4b846f97480021b73, type: 3}
+      propertyPath: box
+      value: 
+      objectReference: {fileID: 1355255621}
+    - target: {fileID: 720472124365431619, guid: 05458f589a195cf4b846f97480021b73, type: 3}
       propertyPath: startPos
       value: 
       objectReference: {fileID: 1322664213}
     - target: {fileID: 720472124365431619, guid: 05458f589a195cf4b846f97480021b73, type: 3}
       propertyPath: charaCond
+      value: 
+      objectReference: {fileID: 133270054}
+    - target: {fileID: 720472124365431619, guid: 05458f589a195cf4b846f97480021b73, type: 3}
+      propertyPath: charaControls
       value: 
       objectReference: {fileID: 133270054}
     m_RemovedComponents: []
