@@ -334,6 +334,7 @@
 "Assets/Scripts/CharacterControls.cs"
 "Assets/Scripts/DoorScript.cs"
 "Assets/Scripts/MovingPlatforms.cs"
+"Assets/Scripts/Node.cs"
 -langversion:8.0
 
 /deterministic

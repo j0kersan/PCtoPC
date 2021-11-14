@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class CharacterControls : MonoBehaviour
 {
+    public List<MovingPlatforms> platformList = new List<MovingPlatforms>();
 
     public MovingPlatforms moveCond;
+
+    public GameObject wallsDetector;
 
     //Quand les touches sont pressés
     public bool keyLeft;
@@ -16,17 +19,24 @@ public class CharacterControls : MonoBehaviour
     //Nombres de pas du joueurs
     public int charaStep;
 
+    public string platform;
+
     // Update is called once per frame
     private void Start()
     {
         powerUse = true;
+        var objects = GameObject.FindGameObjectsWithTag("Platforms");
+
+        for(var i=0; i<objects.Length; i++)
+        {
+            platformList.Add(objects[i].GetComponent<MovingPlatforms>());
+        }
+
+
+        //platform = gameObject.tag == "platform";
     }
     void Update()
     {
-
-        keyRight = false;
-        keyLeft = false;
-
 
         //Conditions d'utilisation des mouvements
         #region CharaMoves
@@ -36,6 +46,7 @@ public class CharacterControls : MonoBehaviour
             transform.localPosition += new Vector3(-2, 0, 0);
             keyLeft = true;
             charaStep += 1;
+            PlatformMoves();
         }
 
         if (Input.GetKeyDown("right") && moveCond.onTheMove == false)
@@ -44,6 +55,7 @@ public class CharacterControls : MonoBehaviour
             keyRight = true;
 
             charaStep += 1;
+            PlatformMoves();
         }
 
         #endregion
@@ -90,5 +102,24 @@ public class CharacterControls : MonoBehaviour
         }
         #endregion
     }
+
+    void PlatformMoves()
+    {
+        foreach (var item in platformList)
+        {
+
+            item.MovePlatform();
+
+
+        }
+
+    }
+    /* private void OnCollisionEnter2D(Collision2D collision)
+     {
+         if (collision.gameObject.tag == "platform")
+         {
+             Physics2D.IgnoreCollision(platform.GetComponent<Collider2D>, GetComponent<Collider2D>);
+         }
+     }*/
 
 }
